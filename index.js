@@ -28,6 +28,7 @@ morgan.token('type', function(req, res) {
     return JSON.stringify(req.body);
 })
 const cors = require('cors')
+app.unsubscribe(express.static('build'))
 app.use(cors())
 app.use(express.json())
 app.use(morgan(function (tokens, req, res) {
@@ -41,9 +42,9 @@ app.use(morgan(function (tokens, req, res) {
     ].join(' ')
 }))
 
-// app.get('/', (request, response) => {
-//     response.send('<h1>HELLO BOYYY!</h1>')
-// })
+app.get('/', (request, response) => {
+    response.send('<h1>HELLO BOYYY!</h1>')
+})
 
  app.get('/api/persons', (request, response) => {
      response.json(persons)
