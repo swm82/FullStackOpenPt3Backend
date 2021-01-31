@@ -41,9 +41,9 @@ app.use(morgan(function (tokens, req, res) {
     ].join(' ')
 }))
 
-app.get('/', (request, response) => {
-    response.send('<h1>HELLO BOYYY!</h1>')
-})
+// app.get('/', (request, response) => {
+//     response.send('<h1>HELLO BOYYY!</h1>')
+// })
 
  app.get('/api/persons', (request, response) => {
      response.json(persons)
